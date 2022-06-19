@@ -11,11 +11,8 @@ const gameBoard = document.getElementById('game-board');
 function main(currentTime) {
   window.requestAnimationFrame(main);
   const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000;
-
-  if (secondsSinceLastRender < 1 / snake_speed) 
-    return (lastRenderTime = currentTime);
-  
-
+  if (secondsSinceLastRender < (1 / snake_speed)) return;
+  lastRenderTime = currentTime
   // logics for the game
   update();
   // take the logics and draw it on the screen
